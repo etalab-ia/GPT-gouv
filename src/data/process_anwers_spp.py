@@ -19,7 +19,7 @@ def process_answers(df: pd.Series) -> pd.Series:
 
     def process_one_answer(row: str) -> str:
         soup = bs4.BeautifulSoup(row, "html.parser")
-        answers = [a.text for a in soup.find_all("p")]
+        answers = [a.text for a in soup.find_all(["p", "ul", "ol"])]
         return " ".join(
             filter_one_answer(answers)
         )
