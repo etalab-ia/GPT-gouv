@@ -13,7 +13,9 @@ def process_answers(df: pd.Series) -> pd.Series:
                     and "particulièrement attaché" not in text.lower() \
                     and "gêne occasionnée" not in text.lower() \
                     and "souhaitons" not in text.lower() \
-                    and "prenons note de votre témoignage" not in text.lower()
+                    and "prenons note de votre témoignage" not in text.lower() \
+                    and "le meilleur service à nos assurés" not in text.lower() \
+                    and "bonne retraite" not in text.lower()
 
                 ]
 
