@@ -17,7 +17,7 @@ n = 20
 collection.add(
     documents=answers["question"].values[:n],
     metadatas=[{"answer": answer} for answer in answers["processed_answers"].values[:n]],
-    ids=answers.index[:n]
+    ids=answers.index[:n].values
 )
 
 results = collection.query(
