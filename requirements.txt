@@ -16,4 +16,5 @@ transformers[torch]==4.25.1
 langchain>=0.0.139
 peft>=0.2.0
 polars>=0.16.2
-chroma>=0.2.0
+chromadb>=0.3.22
+beautifulsoup4==4.11.1
