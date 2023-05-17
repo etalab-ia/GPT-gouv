@@ -12,16 +12,16 @@ collection = chroma_client.get_or_create_collection(name="my_collection", embedd
 answers = pd.read_csv("../../data/processed/processed_answers_spp.csv", sep="~")[["titre", "expérience", "processed_answers"]]
 answers["question"] = answers["titre"] + " " + answers["expérience"]
 
-n = 20
+n = 200
 ### ADD EMBEDDINGS
 collection.add(
-    documents=answers["question"].values[:n],
+    documents=list(answers["question"].values[:n]),
     metadatas=[{"answer": answer} for answer in answers["processed_answers"].values[:n]],
     ids=[str(id) for id in answers.index[:n].values]
 )
 
 results = collection.query(
-    query_texts=answers["question"].values[0],
+    query_texts=answers["question"].values[n],
     n_results=5
 )
 print(results)
