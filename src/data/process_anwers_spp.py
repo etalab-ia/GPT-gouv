@@ -40,5 +40,5 @@ processed_answers = process_answers(df["rep_administration"])
 df_out = df[["créée_le","titre", "expérience", "typologie", "rep_administration"]]
 df_out["processed_answers"] = processed_answers.replace('', np.nan)
 
-df_out.dropna(subset=["processed_answers"]).to_csv("../../data/processed/processed_answers_spp.csv", sep=~"~", index=False)
+df_out.dropna(subset=["processed_answers"]).to_csv("../../data/processed/processed_answers_spp.csv", sep="~", index=False)
 #print(titles[:10], comments[:10], answers[:10])
