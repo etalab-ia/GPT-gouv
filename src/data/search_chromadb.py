@@ -7,7 +7,7 @@ import os
 chroma_client = chromadb.Client(
     Settings(
         chroma_db_impl="duckdb+parquet",
-        persist_dir = os.path.join("..", "..", "data", "processed")
+        persist_directory=os.path.join("..", "..", "data", "processed")
     )
 )
 
