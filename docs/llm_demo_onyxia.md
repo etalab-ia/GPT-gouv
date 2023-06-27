@@ -31,13 +31,29 @@ cd ..
 git clone https://github.com/ParisNeo/lollms-webui.git
 cd lollms-webui
 ```
-Dans `config.yaml` changer `localhost` par `0.0.0.0`
+Dans `config.yaml` changer `localhost` par `0.0.0.0` (=> Ca n'a pas l'air de fonctionner !)
 
+Lancer le script d'initialisation:
 ```
 ./webui.sh
 ```
-
 Suivre les instructions.
 Choisir _7 -  C Transformer (by marella)_ comme binding car c'est lui qui permet de charger Falcon-40B.
 
-Donner le chemin `/home/onyxia/data/Falcon-40b-Instruct.ggmlv3.q4_0.bin` pour le model.
+Donner le chemin `/home/onyxia/data/models/c_transformers/Falcon-40b-Instruct.ggmlv3.q4_0.bin` pour le model.
+
+Finir par Ctrl+C car le binding réseau n'est pas bon.
+
+```
+cd
+cp Falcon-40b-Instruct.ggmlv3.q4_0.bin /home/onyxia/data/models/c_transformers/
+```
+
+Lancer avec le bon binding :
+```
+python app.py --host 0.0.0.0
+```
+
+Dans l'interface Onyxia il y a un deuxième lien dans le Readme qui vous amène sur l'interface.
+
+Il faut penser à regarder le terminal car parfois le serveur pose des questions !
